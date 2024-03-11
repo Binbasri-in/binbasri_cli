@@ -1,0 +1,74 @@
+<!--
+  This is a modified version of the original Terma project from https://github.com/alphaX86/terma
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Terma</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/terminal.css" />
+    <link rel="icon" type="image/x-icon" href="img/fav-icon.png" />
+    <style>
+      /* BEGIN: Floating Button Styles */
+      #floating-button {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        background: linear-gradient(45deg, #00b09b, #96c93d); /* Changed color to vivid green gradient */
+        color: #ccffcc; /* Lighter shade of green for the text */
+        border: none;
+        border-radius: 50px;
+        padding: 20px 35px; /* Increased padding to make the button larger */
+        font-size: 24px; /* Increased font size to make the button more visible */
+        font-family: 'Courier New', monospace; /* Changed font to match terminal style */
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0px 8px 15px rgba(0, 176, 155, 0.5); /* Made shadow greener and more visible */
+        transition: background-color 0.3s ease; /* Added transition for hover effect */
+        animation: move 2s infinite; /* Added animation */
+        font-weight: bold;
+        z-index: 9999; /* Ensure the button stays on top of other elements */
+      }
+
+      #floating-button:hover {
+        background: linear-gradient(45deg, #008f72, #77b745); /* Darker shade of green gradient when hovering */
+      }
+
+      /* Keyframes for moving animation */
+      @keyframes move {
+        0% { transform: translate(0, 0); }
+        50% { transform: translate(0, 10px); }
+        100% { transform: translate(0, 0); }
+      }
+      /* END: Floating Button Styles */
+    </style>
+  </head>
+  <body>
+    <div id="terminal">
+      <a id="before"></a>
+    </div>
+    <div id="command" onclick="$('texter').focus();">
+      <textarea
+        type="text"
+        id="texter"
+        onkeyup="typeIt(this, event)"
+        onkeydown="typeIt(this, event); 
+                   moveIt(this.value.length, event)"
+        onkeypress="typeIt(this, event);"
+        autofocus
+      ></textarea>
+      <div id="liner">
+        <span id="typer"></span><b class="cursor" id="cursor">█</b>
+      </div>
+    </div>
+    <!-- BEGIN: Floating Button -->
+    <a href="https://www.binbasri.me" id="floating-button">GUI</a>
+    <!-- END: Floating Button -->
+    <script src="js/caret.js"></script>
+    <script src="js/commands.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
