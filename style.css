@@ -1,0 +1,123 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color:#06400c;
+  }
+#bezel{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+#screen{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #06400c;
+    display:flex;
+    flex-direction: column;
+}
+#scan{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 60%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.noselect{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.custom-container{
+    display: flex;
+    min-height: 100vh;
+    align-items: flex-start;
+    margin-bottom: 100px;
+}
+.custom-container #content{
+    margin-left: 50px;
+    padding: 50px;
+    font-family: VT323;
+    color: greenyellow;
+    font-size: 30px;
+    text-shadow: 1px 1px 2px rgb(150, 167, 124), 0 0 1em rgb(150, 167, 124), 0 0 0.2em rgb(150, 167, 124);
+    line-height: 0.3em;
+    padding-bottom: 50px;
+}
+
+input:focus{
+    border:none;
+    outline: none;
+    box-shadow: none;
+    background-color: unset;    
+}
+input{
+    border:none;
+    background-color: unset;
+    width:100%;
+    color: greenyellow;
+    font-size: 30px;
+    text-shadow: 1px 1px 2px rgb(150, 167, 124), 0 0 1em rgb(150, 167, 124), 0 0 0.2em rgb(150, 167, 124);
+    font-family: VT323;
+    caret-color: transparent;
+    z-index: 1;
+  }
+
+.typeSmall{
+    line-height: normal;
+    font-size: 40px;
+    margin-right: 50px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.input-field {
+    position: relative;
+    padding-left: 10px;
+}
+.caret {
+    display: inline-block;
+    width: 1ch;
+    height: 1em;
+    background: greenyellow;
+    animation: blink 1s step-start infinite;
+    vertical-align: top;
+    position: absolute;
+    left: 5px;
+    box-shadow: 1px 1px 5px rgb(150, 167, 124);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.input-container {
+    position: relative;
+    width: 300px;
+}
+
+.input-field::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 6px;
+    background-color: greenyellow;
+    pointer-events: none;
+}
