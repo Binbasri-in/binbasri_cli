@@ -70,7 +70,7 @@ async function openTerminal() {
     }
 
     await delay(300);
-    createText(`Welcome ${sessionUUID} v2003.10.26`);
+    createText(`Welcome ${sessionUUID} v2002.06.05`);
     await delay(700);
     createText("Starting the server...");
     await delay(1500);
